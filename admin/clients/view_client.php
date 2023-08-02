@@ -14,7 +14,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 }
 ?>
 <div class="mx-0 py-5 px-3 mx-ns-4 bg-gradient-primary">
-	<h3><b>Client Details</b></h3>
+	<h3><b>Detail Pelanggan</b></h3>
 </div>
 <style>
 	img#cimg{
@@ -29,19 +29,19 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				<div class="container-fluid">
 					<div class="container-fluid">
 						<div class="row">
-							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Code</div>
+							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Kode</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($code) ? $code : '' ?></div>
-							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Client Name</div>
+							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Nama Pelanggan</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($name) ? $name : '' ?></div>
-							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Contact #</div>
+							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Kontak #</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($contact) ? $contact : '' ?></div>
-							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Address</div>
+							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Alamat</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($address) ? $address : '' ?></div>
-							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Meter Code</div>
+							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Kode Meteran</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($meter_code) ? $meter_code : '' ?></div>
-							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Meter First Reading</div>
+							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Pembacaan Meter Pertama</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($first_reading) ? $first_reading : '' ?></div>
-							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Date Created</div>
+							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Tanggal Pembuatan</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($date_created) ? date("F d, Y", strtotime($date_created)) : '' ?></div>
 							<div class="clear-fix my-1"></div>
 							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Status</div>
@@ -50,10 +50,10 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 									$status = isset($status) ? $status : 0 ;
 									switch($status){
 										case 1:
-											echo '<span class="badge badge-primary bg-gradient-primary text-sm px-3 rounded-pill">Active</span>';
+											echo '<span class="badge badge-primary bg-gradient-primary text-sm px-3 rounded-pill">Aktif</span>';
 											break;
 										case 2:
-											echo '<span class="badge badge-danger bg-gradient-danger text-sm px-3 rounded-pill">Inactive</span>';
+											echo '<span class="badge badge-danger bg-gradient-danger text-sm px-3 rounded-pill">Tidak Aktif</span>';
 											break;
 									}
 								?>
@@ -72,7 +72,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 	</div>
 </div>
 <script>
-	
+
 	$(document).ready(function(){
         $('#delete-data').click(function(){
 			_conf("Are you sure to delete this client permanently?","delete_client",['<?= isset($id) ? $id : '' ?>'])

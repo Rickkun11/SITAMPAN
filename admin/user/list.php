@@ -13,9 +13,9 @@
 </style>
 <div class="card card-outline rounded-0 card-navy">
 	<div class="card-header">
-		<h3 class="card-title">List of Users</h3>
+		<h3 class="card-title">Data Pengguna</h3>
 		<div class="card-tools">
-			<a href="./?page=user/manage_user" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
+			<a href="./?page=user/manage_user" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Buat Baru</a>
 		</div>
 	</div>
 	<div class="card-body">
@@ -33,16 +33,16 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Date Updated</th>
+						<th>Tanggal Update</th>
 						<th>Avatar</th>
-						<th>Name</th>
+						<th>Nama</th>
 						<th>Username</th>
-						<th>Type</th>
-						<th>Action</th>
+						<th>Tipe</th>
+						<th>Aksi</th>
 					</tr>
 				</thead>
 				<tbody>
-					<?php 
+					<?php
 					$i = 1;
 						$qry = $conn->query("SELECT *, concat(firstname,' ', lastname) as `name` from `users` where id != '{$_settings->userdata('id')}' order by concat(firstname,' ', lastname) asc ");
 						while($row = $qry->fetch_assoc()):
@@ -66,13 +66,13 @@
                             </td>
 							<td align="center">
 								 <button type="button" class="btn btn-flat p-1 btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
-				                  		Action
+				                  		Aksi
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>
 				                  <div class="dropdown-menu" role="menu">
 				                    <a class="dropdown-item" href="./?page=user/manage_user&id=<?= $row['id'] ?>"><span class="fa fa-edit text-dark"></span> Edit</a>
 				                    <div class="dropdown-divider"></div>
-				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
+				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Hapus</a>
 				                  </div>
 							</td>
 						</tr>

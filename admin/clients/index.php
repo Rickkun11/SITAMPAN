@@ -6,9 +6,9 @@
 <?php endif;?>
 <div class="card card-outline rounded-0 card-navy">
 	<div class="card-header">
-		<h3 class="card-title">List of Clients</h3>
+		<h3 class="card-title">Data Pelanggan</h3>
 		<div class="card-tools">
-			<a href="./?page=clients/manage_client" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
+			<a href="./?page=clients/manage_client" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Buat Baru</a>
 		</div>
 	</div>
 	<div class="card-body">
@@ -25,15 +25,15 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Date Created</th>
-						<th>Code</th>
-						<th>Name</th>
+						<th>Tanggal Pembuatan</th>
+						<th>Kode</th>
+						<th>Nama</th>
 						<th>Status</th>
-						<th>Action</th>
+						<th>Aksi</th>
 					</tr>
 				</thead>
 				<tbody>
-					<?php 
+					<?php
 					$i = 1;
 						$qry = $conn->query("SELECT *,concat(lastname, ', ', firstname, ' ', coalesce(middlename,'')) as `name` from `client_list` where delete_flag = 0 order by unix_timestamp(`date_created`) desc ");
 						while($row = $qry->fetch_assoc()):

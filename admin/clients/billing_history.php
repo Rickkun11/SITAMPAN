@@ -45,19 +45,19 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Reading Date</th>
-                                <th>Due Date</th>
-                                <th>Current Reading</th>
-                                <th>Previous Reading</th>
-                                <th>Consumption</th>
+                                <th>Tanggal Pembacaan</th>
+                                <th>Tanggal Jatuh Tempo</th>
+                                <th>Pembacaan Sekarang</th>
+                                <th>Pembacaan Sebelumnya</th>
+                                <th>Konsumsi</th>
                                 <th>Rate (m<sup>3</sup>)</th>
                                 <th>Status</th>
-                                <th>Amount</th>
+                                <th>Total</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php if(isset($id)): ?>
-                            <?php 
+                            <?php
                             $i = 1;
                                 $qry = $conn->query("SELECT b.*, c.code , concat(c.lastname, ', ', c.firstname, ' ', coalesce(c.middlename,'')) as `name` from `billing_list` b inner join client_list c on b.client_id = c.id where c.id = '{$id}' order by unix_timestamp(`reading_date`) desc, `name` asc ");
                                 while($row = $qry->fetch_assoc()):
@@ -77,7 +77,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
                                                 echo '<span class="badge badge-secondary  bg-gradient-secondary  text-sm px-3 rounded-pill">Pending</span>';
                                                 break;
                                             case 1:
-                                                echo '<span class="badge badge-success bg-gradient-success text-sm px-3 rounded-pill">Paid</span>';
+                                                echo '<span class="badge badge-success bg-gradient-success text-sm px-3 rounded-pill">Terbayar</span>';
                                                 break;
                                         }
                                         ?>
@@ -97,7 +97,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 	</div>
 </div>
 <script>
-	
+
 	$(document).ready(function(){
         $('.table').dataTable({
 			columnDefs: [
@@ -106,5 +106,5 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 			order:[0,'asc']
 		});
 	})
-    
+
 </script>

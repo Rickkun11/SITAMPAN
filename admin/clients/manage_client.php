@@ -10,7 +10,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 }
 ?>
 <div class="mx-0 py-5 px-3 mx-ns-4 bg-gradient-primary">
-	<h3><b><?= isset($id) ? "Update Client Details - ".(isset($code) ? $code : '') : "Create New Client" ?></b></h3>
+	<h3><b><?= isset($id) ? "Update Detail Pelanggan - ".(isset($code) ? $code : '') : "Buat Pelanggan Baru" ?></b></h3>
 </div>
 <style>
 	img#cimg{
@@ -28,10 +28,10 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 						<form action="" id="client-form">
 							<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
 							<div class="form-group mb-3">
-								<label for="category_id" class="control-label">Category</label>
+								<label for="category_id" class="control-label">Kategori</label>
 								<select name="category_id" id="category_id" class="form-control form-control-sm rounded-0" required="required">
 									<option value="" <?= !isset($category_id) ? 'selected' : '' ?> disabled></option>
-									<?php 
+									<?php
 									$category_qry = $conn->query("SELECT * FROM `category_list` where delete_flag = 0 and `status` = 1 ".(isset($category_id) && is_numeric($category_id) ? " or id != '{$category_id}' " : '')." ");
 									while($row = $category_qry->fetch_assoc()):
 									?>
@@ -40,38 +40,38 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 								</select>
 							</div>
 							<div class="form-group mb-3">
-								<label for="firstname" class="control-label">First Name</label>
+								<label for="firstname" class="control-label">Nama Depan</label>
 								<input type="text" class="form-control form-control-sm rounded-0" id="firstname" name="firstname" required="required" value="<?= isset($firstname) ? $firstname : '' ?>"/>
 							</div>
 							<div class="form-group mb-3">
-								<label for="middlename" class="control-label">Middle Name</label>
+								<label for="middlename" class="control-label">Nama Tengah</label>
 								<input type="text" class="form-control form-control-sm rounded-0" id="middlename" name="middlename" placeholder="optional" value="<?= isset($middlename) ? $middlename : '' ?>"/>
 							</div>
 							<div class="form-group mb-3">
-								<label for="lastname" class="control-label">Last Name</label>
+								<label for="lastname" class="control-label">Nama Akhir</label>
 								<input type="text" class="form-control form-control-sm rounded-0" id="lastname" name="lastname" required value="<?= isset($lastname) ? $lastname : '' ?>"/>
 							</div>
 							<div class="form-group mb-3">
-								<label for="contact" class="control-label">Contact #</label>
+								<label for="contact" class="control-label">Kontak #</label>
 								<input type="text" class="form-control form-control-sm rounded-0" id="contact" name="contact" required value="<?= isset($contact) ? $contact : '' ?>"/>
 							</div>
 							<div class="form-group mb-3">
-								<label for="address" class="control-label">Address</label>
+								<label for="address" class="control-label">Alamat</label>
 								<textarea rows="3" class="form-control form-control-sm rounded-0" id="address" name="address" required="required"><?= isset($address) ? $address : '' ?></textarea>
 							</div>
 							<div class="form-group p-0 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-								<label for="meter_code" class="control-label">Meter Code</label>
+								<label for="meter_code" class="control-label">Kode Meteran</label>
 								<input type="text" class="form-control form-control-sm rounded-0" id="meter_code" name="meter_code" value="<?= isset($meter_code) ? $meter_code : '' ?>" required="required">
 							</div>
 							<div class="form-group p-0 col-lg-6 col-md-6 col-sm-12 col-xs-12 mb-3">
-								<label for="first_reading" class="control-label">First Reading</label>
+								<label for="first_reading" class="control-label">Pembacaan Pertama</label>
 								<input type="text" class="form-control form-control-sm rounded-0" id="first_reading" name="first_reading" value="<?= isset($first_reading) ? $first_reading : '' ?>" required="required">
 							</div>
 							<div class="form-group">
 								<label for="status" class="control-label">Status</label>
 								<select name="status" id="status" class="form-control form-control-sm rounded-0" required>
-								<option value="1" <?php echo isset($status) && $status == 1 ? 'selected' : '' ?>>Active</option>
-								<option value="2" <?php echo isset($status) && $status == 2 ? 'selected' : '' ?>>Inactive</option>
+								<option value="1" <?php echo isset($status) && $status == 1 ? 'selected' : '' ?>>Aktif</option>
+								<option value="2" <?php echo isset($status) && $status == 2 ? 'selected' : '' ?>>Tidak Aktif</option>
 								</select>
 							</div>
 						</form>

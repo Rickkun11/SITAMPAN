@@ -30,13 +30,13 @@
                           Dashboard
                         </p>
                       </a>
-                    </li> 
+                    </li>
                     <li class="nav-header">Main</li>
                     <li class="nav-item dropdown">
                       <a href="<?php echo base_url ?>admin/?page=clients" class="nav-link nav-clients">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
-                          List of Clients
+                          Data Pelanggan
                         </p>
                       </a>
                     </li>
@@ -44,26 +44,26 @@
                       <a href="<?php echo base_url ?>admin/?page=billings" class="nav-link nav-billings">
                         <i class="nav-icon fas fa-file-invoice"></i>
                         <p>
-                          Billings
+                          Pembayaran
                         </p>
                       </a>
                     </li>
-                    <li class="nav-header">Reports</li>
+                    <li class="nav-header">Rapor</li>
                     <li class="nav-item dropdown">
                       <a href="<?php echo base_url ?>admin/?page=reports/monthly_billing" class="nav-link nav-reports_monthly_billing">
                         <i class="nav-icon fas fa-circle"></i>
                         <p>
-                          Monthly Report
+                          Rapor Bulanan
                         </p>
                       </a>
                     </li>
                     <?php if($_settings->userdata('type') == 1): ?>
-                    <li class="nav-header">Maintenance</li>
+                    <li class="nav-header">Pengaturan</li>
                     <li class="nav-item dropdown">
                       <a href="<?php echo base_url ?>admin/?page=category" class="nav-link nav-category">
                         <i class="nav-icon fas fa-th-list"></i>
                         <p>
-                          List of Category
+                          Data Kategori
                         </p>
                       </a>
                     </li>
@@ -71,7 +71,7 @@
                       <a href="<?php echo base_url ?>admin/?page=user/list" class="nav-link nav-user_list">
                         <i class="nav-icon fas fa-users-cog"></i>
                         <p>
-                          User List
+                          List Pengguna
                         </p>
                       </a>
                     </li>

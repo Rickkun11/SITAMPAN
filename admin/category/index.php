@@ -6,9 +6,9 @@
 <?php endif;?>
 <div class="card card-outline rounded-0 card-navy">
 	<div class="card-header">
-		<h3 class="card-title">List of Category</h3>
+		<h3 class="card-title">Kategori</h3>
 		<div class="card-tools">
-			<a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
+			<a href="javascript:void(0)" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Buat Baru</a>
 		</div>
 	</div>
 	<div class="card-body">
@@ -24,14 +24,14 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Date Created</th>
-						<th>Name</th>
+						<th>Tanggal Pembuatan</th>
+						<th>Nama</th>
 						<th>Status</th>
-						<th>Action</th>
+						<th>Aksi</th>
 					</tr>
 				</thead>
 				<tbody>
-					<?php 
+					<?php
 					$i = 1;
 						$qry = $conn->query("SELECT * FROM `category_list` where delete_flag = 0 order by unix_timestamp(`date_created`) desc");
 						while($row = $qry->fetch_assoc()):
@@ -54,7 +54,7 @@
                             </td>
 							<td align="center">
 								 <button type="button" class="btn btn-flat p-1 btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
-				                  		Action
+				                  		Aksi
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>
 				                  <div class="dropdown-menu" role="menu">

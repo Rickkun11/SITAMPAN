@@ -38,19 +38,19 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				<div class="container-fluid">
 					<div class="container-fluid" id="printout">
 						<div class="row">
-							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Reading Date</div>
+							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Tanggal Pembacaan</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($reading_date) ? date("Y-m-d", strtotime($reading_date)) : '' ?></div>
-							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Client Name</div>
+							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Nama Pelanggan</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($name) ? $name : '' ?></div>
-							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Reading</div>
+							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Pembacaan</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($reading) ? format_num($reading) : '' ?></div>
-							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Previous</div>
+							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Pembacaan Sebelumnya</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($previous) ? format_num($previous) : '' ?></div>
-							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Rate per Cubic Meter (m<sup>3</sup>)</div>
+							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Rate Meter (m<sup>3</sup>)</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($rate) ? $rate : '' ?></div>
-							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Total Amount</div>
+							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Total</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($total) ? $total : '' ?></div>
-							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Due Date</div>
+							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Tanggal Jatuh Tempo</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($due_date) ? date("Y-m-d", strtotime($due_date)) : '' ?></div>
 							<div class="clear-fix my-1"></div>
 							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Status</div>

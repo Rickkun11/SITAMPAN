@@ -6,9 +6,9 @@
 <?php endif;?>
 <div class="card card-outline rounded-0 card-navy">
 	<div class="card-header">
-		<h3 class="card-title">List of Bill</h3>
+		<h3 class="card-title">Data Pembayaran</h3>
 		<div class="card-tools">
-			<a href="./?page=billings/manage_billing" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Create New</a>
+			<a href="./?page=billings/manage_billing" id="create_new" class="btn btn-flat btn-primary"><span class="fas fa-plus"></span>  Buat Baru</a>
 		</div>
 	</div>
 	<div class="card-body">

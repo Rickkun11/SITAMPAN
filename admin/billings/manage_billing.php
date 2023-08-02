@@ -18,7 +18,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
   }
 </script>
 <div class="mx-0 py-5 px-3 mx-ns-4 bg-gradient-primary">
-	<h3><b><?= isset($id) ? "Update Billing Details - ".(isset($code) ? $code : '') : "Create New Billing" ?></b></h3>
+	<h3><b><?= isset($id) ? "Update Billing Details - ".(isset($code) ? $code : '') : "Buat Pembayaran Baru" ?></b></h3>
 </div>
 <style>
 	img#cimg{
@@ -36,7 +36,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 						<form action="" id="billing-form">
 							<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
 							<div class="form-group mb-3">
-								<label for="client_id" class="control-label">Client</label>
+								<label for="client_id" class="control-label">Pelanggan</label>
 								<select name="client_id" id="client_id" class="form-control form-control-sm rounded-0" required="required">
 									<option value="" <?= !isset($client_id) ? 'selected' : '' ?> disabled></option>
 									<?php
@@ -48,34 +48,34 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 								</select>
 							</div>
 							<div class="form-group mb-3">
-								<label for="reading_date" class="control-label">Reading Date</label>
+								<label for="reading_date" class="control-label">Tanggal Pembacaan</label>
 								<input type="date" class="form-control form-control-sm rounded-0" id="reading_date" name="reading_date" required="required" max="<?= date("Y-m-d") ?>" value="<?= isset($reading_date) ? date("Y-m-d", strtotime($reading_date)) : '' ?>"/>
 							</div>
 							<div class="form-group mb-3">
-								<label for="previous" class="control-label">Previous Reading</label>
+								<label for="previous" class="control-label">Pembacaan Sebelumnya</label>
 								<input type="text" class="form-control form-control-sm rounded-0" id="previous" name="previous" required="required" readonly value="<?= isset($previous) ? $previous : '' ?>"/>
 							</div>
 							<div class="form-group mb-3">
-								<label for="reading" class="control-label">Current Reading</label>
+								<label for="reading" class="control-label">Pembacaan Sekarang</label>
 								<input type="text" class="form-control form-control-sm rounded-0" id="reading" name="reading" required="required" value="<?= isset($reading) ? $reading : '' ?>"/>
 							</div>
 							<div class="form-group mb-3">
-								<label for="rate" class="control-label">Rate per Cubic Meter (m<sup>3</sup>)</label>
+								<label for="rate" class="control-label">Rate Meter (m<sup>3</sup>)</label>
 								<input type="text" class="form-control form-control-sm rounded-0" id="rate" name="rate" required readonly value="<?= isset($rate) ? $rate : $_settings->info('rate') ?>"/>
 							</div>
 							<div class="form-group mb-3">
-								<label for="total" class="control-label">Total Bill</label>
+								<label for="total" class="control-label">Total</label>
 								<input type="text" step="any" class="form-control form-control-sm rounded-0 text-right" id="total" readonly name="total" required value="<?= isset($total) ? $total : '' ?>"/>
 							</div>
 							<div class="form-group mb-3">
-								<label for="due_date" class="control-label">Due Date</label>
+								<label for="due_date" class="control-label">Tanggal Jatuh Tempo</label>
 								<input type="date" class="form-control form-control-sm rounded-0" id="due_date" name="due_date" required="required" value="<?= isset($due_date) ? date("Y-m-d", strtotime($due_date)) : '' ?>"/>
 							</div>
 							<div class="form-group">
 								<label for="status" class="control-label">Status</label>
 								<select name="status" id="status" class="form-control form-control-sm rounded-0" required>
 								<option value="0" <?php echo isset($status) && $status == 0 ? 'selected' : '' ?>>Pending</option>
-								<option value="1" <?php echo isset($status) && $status == 1 ? 'selected' : '' ?>>Paid</option>
+								<option value="1" <?php echo isset($status) && $status == 1 ? 'selected' : '' ?>>Terbayar</option>
 								</select>
 							</div>
 						</form>

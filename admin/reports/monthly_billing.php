@@ -9,7 +9,7 @@ $month = isset($_GET['month']) ? $_GET['month'] : date("Y-m");
 ?>
 <div class="card card-outline rounded-0 card-navy">
 	<div class="card-header">
-		<h3 class="card-title">Monthly Billing Report</h3>
+		<h3 class="card-title">Rapor Pembayaran Bulanan</h3>
 	</div>
 	<div class="card-body">
         <div class="container-fluid">
@@ -20,7 +20,7 @@ $month = isset($_GET['month']) ? $_GET['month'] : date("Y-m");
                         <div class="row align-items-end">
                             <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group m-0">
-                                    <label for="month" class="control-label">Filter Month</label>
+                                    <label for="month" class="control-label">Filter Bulan</label>
                                     <input type="month" id="month" name="month" value="<?= date("Y-m",strtotime($month."-1")) ?>" class="form-control form-control-sm rounded-0" required>
                                 </div>
                             </div>

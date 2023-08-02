@@ -14,14 +14,14 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 	<form action="" id="category-form">
 		<input type="hidden" name ="id" value="<?php echo isset($id) ? $id : '' ?>">
 		<div class="form-group">
-			<label for="name" class="control-label">Name</label>
+			<label for="name" class="control-label">Nama</label>
 			<input type="text" class="form-control form-control-sm rouned-0" name="name" id="name" value="<?= isset($name) ? $name : '' ?>" required="required">
 		</div>
 		<div class="form-group">
 			<label for="status" class="control-label">Status</label>
 			<select name="status" id="status" class="form-control form-control-sm rounded-0" required>
-			<option value="1" <?php echo isset($status) && $status == 1 ? 'selected' : '' ?>>Active</option>
-			<option value="2" <?php echo isset($status) && $status == 2 ? 'selected' : '' ?>>Inactive</option>
+			<option value="1" <?php echo isset($status) && $status == 1 ? 'selected' : '' ?>>Aktif</option>
+			<option value="2" <?php echo isset($status) && $status == 2 ? 'selected' : '' ?>>Tidak Aktif</option>
 			</select>
 		</div>
 	</form>

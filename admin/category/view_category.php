@@ -20,7 +20,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 </style>
 <div class="container-fluid">
 	<dl>
-		<dt class="text-muted">Name</dt>
+		<dt class="text-muted">Nama</dt>
 		<dd class="h5 pl-4"><?= $name ?></dd>
 		<dt class="text-muted">Status</dt>
 		<td class="pl-4">
@@ -28,10 +28,10 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 			$status = isset($status) ? $status : 0;
 			switch($status){
 				case 1:
-					echo '<span class="badge badge-primary bg-gradient-primary text-sm px-3 rounded-pill"> Active</span>';
+					echo '<span class="badge badge-primary bg-gradient-primary text-sm px-3 rounded-pill"> Aktif</span>';
 					break;
 				case 2:
-					echo '<span class="badge badge-danger bg-gradient-danger text-sm px-3 rounded-pill"> Inactive</span>';
+					echo '<span class="badge badge-danger bg-gradient-danger text-sm px-3 rounded-pill"> Tidak Aktif</span>';
 					break;
 			}
 		?>
@@ -39,5 +39,5 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 	</dl>
 </div>
 <div class="text-right py-3">
-	<button class="btn btn-primary-light btn-sm bg-gradient-light border" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+	<button class="btn btn-primary-light btn-sm bg-gradient-light border" type="button" data-dismiss="modal"><i class="fa fa-times"></i> Tutup</button>
 </div>
