@@ -9,7 +9,14 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
     }
 }
 ?>
-
+<script>
+	const rupiah = (number)=>{
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR"
+    }).format(number);
+  }
+</script>
 <div class="mx-0 py-5 px-3 mx-ns-4 bg-gradient-primary">
 	<h3><b><?= isset($id) ? "Update Billing Details - ".(isset($code) ? $code : '') : "Create New Billing" ?></b></h3>
 </div>
@@ -58,7 +65,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 							</div>
 							<div class="form-group mb-3">
 								<label for="total" class="control-label">Total Bill</label>
-								<input type="number" step="any" class="form-control form-control-sm rounded-0 text-right" id="total" readonly name="total" required value="<?= isset($total) ? $total : '' ?>"/>
+								<input type="text" step="any" class="form-control form-control-sm rounded-0 text-right" id="total" readonly name="total" required value="<?= isset($total) ? $total : '' ?>"/>
 							</div>
 							<div class="form-group mb-3">
 								<label for="due_date" class="control-label">Due Date</label>
@@ -91,7 +98,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 		current_reading = current_reading > 0 ? current_reading : 0;
 		previous = previous > 0 ? previous : 0;
 
-		$('#total').val((parseFloat(current_reading) - parseFloat(previous)) * parseFloat(rate))
+		$('#total').val(rupiah((parseFloat(current_reading) - parseFloat(previous)) * parseFloat(rate)))
 	}
 	$(document).ready(function(){
 		$('#client_id').select2({

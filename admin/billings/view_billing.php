@@ -13,6 +13,15 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
     echo '<script> alert("Billing ID is required."); location.replace("./?page=billings");</script>';
 }
 ?>
+
+<script>
+	const rupiah = (number)=>{
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR"
+    }).format(number);
+  }
+</script>
 <div class="mx-0 py-5 px-3 mx-ns-4 bg-gradient-primary">
 	<h3><b>Billing Details</b></h3>
 </div>
@@ -40,7 +49,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Rate per Cubic Meter (m<sup>3</sup>)</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($rate) ? $rate : '' ?></div>
 							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Total Amount</div>
-							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($total) ? number_format($total) : '' ?></div>
+							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($total) ? $total : '' ?></div>
 							<div class="col-lg-4 col-md-5 col-sm-12 col-xs-12 py-3 font-weight-bolder border">Due Date</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 py-3 border"><?= isset($due_date) ? date("Y-m-d", strtotime($due_date)) : '' ?></div>
 							<div class="clear-fix my-1"></div>

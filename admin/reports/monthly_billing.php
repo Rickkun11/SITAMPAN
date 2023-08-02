@@ -49,18 +49,18 @@ $month = isset($_GET['month']) ? $_GET['month'] : date("Y-m");
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Reading Date</th>
-                        <th>Due Date</th>
-                        <th>Client</th>
-                        <th>Reading</th>
-                        <th>Consumption</th>
+                        <th>Tanggal Baca</th>
+                        <th>Tanggal Jatuh Tempo</th>
+                        <th>Pelanggan</th>
+                        <th>Pembacaan</th>
+                        <th>Konsumsi</th>
                         <th>Rate (m<sup>3</sup>)</th>
                         <th>Status</th>
-                        <th>Amount</th>
+                        <th>Total</th>
                     </tr>
                 </thead>
 				<tbody>
-					<?php 
+					<?php
 					$i = 1;
 						$qry = $conn->query("SELECT b.*, c.code , concat(c.lastname, ', ', c.firstname, ' ', coalesce(c.middlename,'')) as `name` from `billing_list` b inner join client_list c on b.client_id = c.id where date_format(b.reading_date, '%Y-%m') = '{$month}' order by unix_timestamp(`reading_date`) desc, `name` asc ");
 						while($row = $qry->fetch_assoc()):
@@ -71,8 +71,8 @@ $month = isset($_GET['month']) ? $_GET['month'] : date("Y-m");
                             <td><?php echo date("Y-m-d",strtotime($row['due_date'])) ?></td>
                             <td>
                                 <div style="line-height:1em">
-                                    <div><?= format_num($row['code']) ?></div>
-                                    <div><?= ($row['name']) ?></div>
+                                    <div><?= $row['code'] ?></div>
+                                    <div><?= $row['name'] ?></div>
                                 </div>
                             </td>
                             <td>
@@ -95,7 +95,7 @@ $month = isset($_GET['month']) ? $_GET['month'] : date("Y-m");
                                 }
                                 ?>
                             </td>
-                            <td class="text-right"><?php echo format_num($row['total']) ?></td>
+                            <td class="text-right"><?php echo $row['total'] ?></td>
                         </tr>
 					<?php endwhile; ?>
                     <?php if($qry->num_rows <= 0): ?>
@@ -149,7 +149,7 @@ $month = isset($_GET['month']) ? $_GET['month'] : date("Y-m");
 						 nw.print()
 						 setTimeout(() => {
 							nw.close()
-							end_loader() 
+							end_loader()
 						 }, 300);
 					 }, 300);
 		})

@@ -26,16 +26,16 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Reading Date</th>
-						<th>Client</th>
-						<th>Amount</th>
-						<th>Due Date</th>
+						<th>Tanggal Baca</th>
+						<th>Pelanggan</th>
+						<th>Total</th>
+						<th>Tanggal Jatuh Tempo</th>
 						<th>Status</th>
-						<th>Action</th>
+						<th>Aksi</th>
 					</tr>
 				</thead>
 				<tbody>
-					<?php 
+					<?php
 					$i = 1;
 						$qry = $conn->query("SELECT b.*, c.code , concat(c.lastname, ', ', c.firstname, ' ', coalesce(c.middlename,'')) as `name` from `billing_list` b inner join client_list c on b.client_id = c.id order by unix_timestamp(`reading_date`) desc, `name` asc ");
 						while($row = $qry->fetch_assoc()):
@@ -44,7 +44,7 @@
 							<td class="text-center"><?php echo $i++; ?></td>
 							<td><?php echo date("Y-m-d",strtotime($row['reading_date'])) ?></td>
 							<td><?php echo $row['code'] ." - ".$row['name'] ?></td>
-							<td><?php echo format_num($row['total']) ?></td>
+							<td><?php echo $row['total'] ?></td>
 							<td><?php echo date("Y-m-d",strtotime($row['due_date'])) ?></td>
 							<td class="text-center">
 								<?php
