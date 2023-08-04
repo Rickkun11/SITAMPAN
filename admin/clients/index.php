@@ -47,25 +47,25 @@
 								<?php
 								switch($row['status']){
 									case 1:
-										echo '<span class="badge badge-primary bg-gradient-primary text-sm px-3 rounded-pill">Active</span>';
+										echo '<span class="badge badge-primary bg-gradient-primary text-sm px-3 rounded-pill">Aktif</span>';
 										break;
 									case 2:
-										echo '<span class="badge badge-danger bg-gradient-danger text-sm px-3 rounded-pill">Inactive</span>';
+										echo '<span class="badge badge-danger bg-gradient-danger text-sm px-3 rounded-pill">Tidak Aktif</span>';
 										break;
 								}
 								?>
                             </td>
 							<td align="center">
 								 <button type="button" class="btn btn-flat p-1 btn-default btn-sm dropdown-toggle dropdown-icon" data-toggle="dropdown">
-				                  		Action
+				                  		Aksi
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>
 				                  <div class="dropdown-menu" role="menu">
-				                    <a class="dropdown-item view_data" href="./?page=clients/view_client&id=<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
+				                    <a class="dropdown-item view_data" href="./?page=clients/view_client&id=<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> Lihat</a>
 				                    <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item edit_data" href="./?page=clients/manage_client&id=<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
 				                    <div class="dropdown-divider"></div>
-				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
+				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Hapus</a>
 				                  </div>
 							</td>
 						</tr>
@@ -78,7 +78,7 @@
 <script>
 	$(document).ready(function(){
 		$('.delete_data').click(function(){
-			_conf("Are you sure to delete this client permanently?","delete_client",[$(this).attr('data-id')])
+			_conf("Anda yakin menghapusnya?","delete_client",[$(this).attr('data-id')])
 		})
 		$('.table').dataTable({
 			columnDefs: [

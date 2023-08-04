@@ -79,7 +79,7 @@
                       <a href="<?php echo base_url ?>admin/?page=system_info" class="nav-link nav-system_info">
                         <i class="nav-icon fas fa-tools"></i>
                         <p>
-                          Settings
+                          Pengaturan
                         </p>
                       </a>
                     </li>

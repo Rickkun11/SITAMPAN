@@ -23,7 +23,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
   }
 </script>
 <div class="mx-0 py-5 px-3 mx-ns-4 bg-gradient-primary">
-	<h3><b>Billing Details</b></h3>
+	<h3><b>Detail Pembayaran</b></h3>
 </div>
 <style>
 	img#cimg{
@@ -75,7 +75,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 				<button class="btn btn-light btn-sm bg-gradient-light border rounded-0" type="button" id="print"><i class="fa fa-print"></i> Print</button>
 				<a class="btn btn-primary btn-sm bg-gradient-primary rounded-0" href="./?page=billings/manage_billing&id=<?= isset($id) ? $id :'' ?>"><i class="fa fa-edit"></i> Edit</a>
 				<button class="btn btn-danger btn-sm bg-gradient-danger rounded-0" type="button" id="delete-data"><i class="fa fa-trash"></i> Delete</button>
-				<a class="btn btn-light btn-sm bg-gradient-light border rounded-0" href="./?page=billings"><i class="fa fa-angle-left"></i> Back to List</a>
+				<a class="btn btn-light btn-sm bg-gradient-light border rounded-0" href="./?page=billings"><i class="fa fa-angle-left"></i> Kembali</a>
 			</div>
 		</div>
 	</div>
@@ -89,7 +89,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
 			<div class="col-8">
 				<div style="line-height:1em">
 					<h4 class="text-center"><?= $_settings->info('name') ?></h4>
-					<h3 class="text-center">Billing Statement</h3>
+					<h3 class="text-center">Struk Pembayaran</h3>
 				</div>
 			</div>
 		</div>

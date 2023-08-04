@@ -27,7 +27,7 @@ Class Master extends DBConnection {
 				$resp['status'] = 'success';
 			}else{
 				$resp['status'] = 'failed';
-				$resp['error'] = 'failed to delete '.$path;
+				$resp['error'] = 'Gagal Di Hapus '.$path;
 			}
 		}else{
 			$resp['status'] = 'failed';
@@ -57,10 +57,10 @@ Class Master extends DBConnection {
 			$resp['aid'] = $aid;
 
 			if(empty($id))
-				$resp['msg'] = "New Category successfully saved.";
+				$resp['msg'] = "Kategori Sukses Ditambahkan.";
 			else
-				$resp['msg'] = " Category successfully updated.";
-			
+				$resp['msg'] = " Kategori Sukses Diupdate.";
+
 		}else{
 			$resp['status'] = 'failed';
 			$resp['err'] = $this->conn->error."[{$sql}]";
@@ -74,7 +74,7 @@ Class Master extends DBConnection {
 		$del = $this->conn->query("UPDATE `category_list` set delete_flag = 1 where id = '{$id}'");
 		if($del){
 			$resp['status'] = 'success';
-			$this->settings->set_flashdata('success'," Category successfully deleted.");
+			$this->settings->set_flashdata('success'," Kategori Sukses Dihapus.");
 		}else{
 			$resp['status'] = 'failed';
 			$resp['error'] = $this->conn->error;
@@ -108,7 +108,7 @@ Class Master extends DBConnection {
 		$check = $this->conn->query("SELECT id FROM `client_list` where meter_code = '{$meter_code}' and delete_flag = 0 ".(isset($id) ? " and id !='{$id}' " : "" )." ")->num_rows;
 		if($check > 0){
 			$resp['status'] = 'failed';
-			$resp['msg'] = 'Meter Code already exist.';
+			$resp['msg'] = 'Kode Meter Sudah Ada.';
 			return json_encode($resp);
 		}
 		if(empty($id)){
@@ -123,10 +123,10 @@ Class Master extends DBConnection {
 			$resp['aid'] = $aid;
 
 			if(empty($id))
-				$resp['msg'] = "New Client successfully saved.";
+				$resp['msg'] = "Pelanggan Baru Sukses Disimpan.";
 			else
-				$resp['msg'] = " Client successfully updated.";
-			
+				$resp['msg'] = " Pelanggan Berhasil Diupdate.";
+
 		}else{
 			$resp['status'] = 'failed';
 			$resp['err'] = $this->conn->error."[{$sql}]";
@@ -140,7 +140,7 @@ Class Master extends DBConnection {
 		$del = $this->conn->query("UPDATE `client_list` set delete_flag = 1 where id = '{$id}'");
 		if($del){
 			$resp['status'] = 'success';
-			$this->settings->set_flashdata('success'," Client successfully deleted.");
+			$this->settings->set_flashdata('success'," Pelanggan Sukses Dihapus.");
 		}else{
 			$resp['status'] = 'failed';
 			$resp['error'] = $this->conn->error;
@@ -170,7 +170,7 @@ Class Master extends DBConnection {
 				$data .= " `{$k}`='{$v}' ";
 			}
 		}
-		
+
 		if(empty($id)){
 			$sql = "INSERT INTO `billing_list` set {$data} ";
 		}else{
@@ -183,10 +183,10 @@ Class Master extends DBConnection {
 			$resp['aid'] = $aid;
 
 			if(empty($id))
-				$resp['msg'] = "New Billing Statement has been saved successfully.";
+				$resp['msg'] = "Struk Berhasil Disimpan.";
 			else
-				$resp['msg'] = " Billing Statement has been updated successfully.";
-			
+				$resp['msg'] = " Struk Berhasil Diupdate.";
+
 		}else{
 			$resp['status'] = 'failed';
 			$resp['err'] = $this->conn->error."[{$sql}]";
@@ -200,7 +200,7 @@ Class Master extends DBConnection {
 		$del = $this->conn->query("DELETE FROM `billing_list` where id = '{$id}'");
 		if($del){
 			$resp['status'] = 'success';
-			$this->settings->set_flashdata('success'," Billing Statement has been deleted successfully.");
+			$this->settings->set_flashdata('success'," Struk Berhasil Dihapus.");
 		}else{
 			$resp['status'] = 'failed';
 			$resp['error'] = $this->conn->error;

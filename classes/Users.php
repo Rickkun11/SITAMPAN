@@ -27,7 +27,7 @@ Class Users extends DBConnection {
 			$qry = $this->conn->query("INSERT INTO users set {$data}");
 			if($qry){
 				$id=$this->conn->insert_id;
-				$this->settings->set_flashdata('success','User Details successfully saved.');
+				$this->settings->set_flashdata('success','Data Pengguna Sukses Disimpan.');
 				foreach($_POST as $k => $v){
 					if($k != 'id'){
 						if(!empty($data)) $data .=" , ";
@@ -71,7 +71,7 @@ Class Users extends DBConnection {
 		}else{
 			$qry = $this->conn->query("UPDATE users set $data where id = {$id}");
 			if($qry){
-				$this->settings->set_flashdata('success','User Details successfully updated.');
+				$this->settings->set_flashdata('success','Data Pengguna Sukses Diupdate.');
 				foreach($_POST as $k => $v){
 					if($k != 'id'){
 						if(!empty($data)) $data .=" , ";
@@ -112,14 +112,14 @@ Class Users extends DBConnection {
 			}else{
 				return "UPDATE users set $data where id = {$id}";
 			}
-			
+
 		}
 	}
 	public function delete_users(){
 		extract($_POST);
 		$qry = $this->conn->query("DELETE FROM users where id = $id");
 		if($qry){
-			$this->settings->set_flashdata('success','User Details successfully deleted.');
+			$this->settings->set_flashdata('success','Data Pengguna Sukses Dihapus.');
 			if(is_file(base_app."uploads/avatars/$id.png"))
 				unlink(base_app."uploads/avatars/$id.png");
 			return 1;
@@ -144,7 +144,7 @@ Class Users extends DBConnection {
 			$qry = $this->conn->query("INSERT INTO individual_list set {$data}");
 			if($qry){
 				$id=$this->conn->insert_id;
-				$this->settings->set_flashdata('success','User Details successfully saved.');
+				$this->settings->set_flashdata('success','Data Pengguna Berhasil Disimpan.');
 				foreach($_POST as $k => $v){
 					if($k != 'id'){
 						if(!empty($data)) $data .=" , ";
@@ -188,7 +188,7 @@ Class Users extends DBConnection {
 		}else{
 			$qry = $this->conn->query("UPDATE individual_list set $data where id = {$id}");
 			if($qry){
-				$this->settings->set_flashdata('success','User Details successfully updated.');
+				$this->settings->set_flashdata('success','Data Pengguna Sukses Diupdate.');
 				foreach($_POST as $k => $v){
 					if($k != 'id'){
 						if(!empty($data)) $data .=" , ";
@@ -229,14 +229,14 @@ Class Users extends DBConnection {
 			}else{
 				return "UPDATE users set $data where id = {$id}";
 			}
-			
+
 		}
 	}
 	public function delete_individual(){
 		extract($_POST);
 		$qry = $this->conn->query("DELETE FROM individual_list where id = $id");
 		if($qry){
-			$this->settings->set_flashdata('success','Individual Details successfully deleted.');
+			$this->settings->set_flashdata('success','Data Individual Sukses Dihapus.');
 			if(is_file(base_app."uploads/individual/$id.png"))
 				unlink(base_app."uploads/individual/$id.png");
 			return 1;
@@ -271,9 +271,9 @@ Class Users extends DBConnection {
 			$uid = !empty($id) ? $id : $this->conn->insert_id;
 			$resp['status'] = 'success';
 			if(!empty($id))
-				$resp['msg'] = 'User Details has been updated successfully';
+				$resp['msg'] = 'Detail Pengguna Sukses Disimpan';
 			else
-				$resp['msg'] = 'Your Account has been created successfully';
+				$resp['msg'] = 'Akun Anda Sukses Di Simpan';
 
 			if(!empty($_FILES['img']['tmp_name'])){
 				if(!is_dir(base_app."uploads/individual"))

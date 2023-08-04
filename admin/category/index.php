@@ -44,10 +44,10 @@
 								<?php
 								switch($row['status']){
 									case 1:
-										echo '<span class="badge badge-primary bg-gradient-primary text-sm px-3 rounded-pill">Active</span>';
+										echo '<span class="badge badge-primary bg-gradient-primary text-sm px-3 rounded-pill">Aktif</span>';
 										break;
 									case 2:
-										echo '<span class="badge badge-danger bg-gradient-danger text-sm px-3 rounded-pill">Denied</span>';
+										echo '<span class="badge badge-danger bg-gradient-danger text-sm px-3 rounded-pill">Tidak Aktif</span>';
 										break;
 								}
 								?>
@@ -58,11 +58,11 @@
 				                    <span class="sr-only">Toggle Dropdown</span>
 				                  </button>
 				                  <div class="dropdown-menu" role="menu">
-				                    <a class="dropdown-item view_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> View</a>
+				                    <a class="dropdown-item view_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-eye text-dark"></span> Lihat</a>
 				                    <div class="dropdown-divider"></div>
 				                    <a class="dropdown-item edit_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-edit text-primary"></span> Edit</a>
 				                    <div class="dropdown-divider"></div>
-				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Delete</a>
+				                    <a class="dropdown-item delete_data" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>"><span class="fa fa-trash text-danger"></span> Hapus</a>
 				                  </div>
 							</td>
 						</tr>

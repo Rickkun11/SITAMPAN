@@ -18,7 +18,7 @@ if(isset($_GET['id']) && $_GET['id'] > 0){
   }
 </script>
 <div class="mx-0 py-5 px-3 mx-ns-4 bg-gradient-primary">
-	<h3><b><?= isset($id) ? "Update Billing Details - ".(isset($code) ? $code : '') : "Buat Pembayaran Baru" ?></b></h3>
+	<h3><b><?= isset($id) ? "Update Detail Pembayaran - ".(isset($code) ? $code : '') : "Buat Pembayaran Baru" ?></b></h3>
 </div>
 <style>
 	img#cimg{
